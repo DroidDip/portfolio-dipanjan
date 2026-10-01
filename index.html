@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dipanjan Chakraborty — Senior Android Engineer & Group Lead with 11.6+ years of experience.">
+<title>Dipanjan Chakraborty | Senior Android Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="spotlight"></div>
+
+<header id="navbar">
+  <div class="nav-shell">
+    <a class="brand" href="#hero" data-nav>
+      <div class="avatar mini">DC</div>
+      <div>
+        <strong>Dipanjan</strong><span class="online"></span>
+        <small>Senior Android Engineer</small>
+      </div>
+    </a>
+    <nav class="desktop-nav">
+      <a href="#hero" data-nav class="active">About</a>
+      <a href="#projects" data-nav>Projects</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#blog" data-nav>Blog</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-btn" id="langBtn" aria-label="Language">◎ EN</button>
+      <button class="icon-btn" id="commandBtn" aria-label="Open command palette">⌘</button>
+      <a href="#contact" class="nav-cta" data-nav>Contact <span>↗</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="hero" class="hero section">
+  <div class="glow blue"></div><div class="glow purple"></div><div class="glow pink"></div>
+  <div class="hero-inner">
+    <div class="avatar-wrap"><div class="avatar profile-holder" id="profileHolder"><img id="profileImage" src="assets/profile.jpg" alt="Dipanjan Chakraborty" onerror="this.style.display='none'"><span id="profileInitials">DC</span></div><i>✦</i></div>
+    <div class="eyebrow">11.6+ YEARS · ANDROID · MOBILE ARCHITECTURE</div>
+    <h1><small>Hi, I'm</small><span class="first-name">Dipanjan</span><span class="last-name">Chakraborty</span><b class="wave-hand" aria-label="waving hand">👋</b></h1>
+    <div class="role"><b>&lt;</b><span id="roleText">Senior Android Engineer</span><b>/&gt;</b></div>
+    <p class="hero-copy">I design and build scalable, secure and high-performance Android applications with Kotlin, Jetpack Compose and modern architecture — across banking, retail and sports technology.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="primary" data-nav>Explore Work <span>→</span></a>
+      <a href="#contact" class="secondary" data-nav>Get In Touch <span>↗</span></a>
+    </div>
+    <div class="socials">
+      <a class="social-btn" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
+      <a class="social-btn" href="https://www.linkedin.com/in/dipanjanchakraborty-b4b15a7a/" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      
+      <a class="resume" href="assets/Dipanjan_Chakraborty_SeniorAndroidDeveloper_Resume.pdf" download>↓ Download Resume</a>
+    </div>
+    <div class="stats">
+      <div><strong>11.6+</strong><span>Years Experience</span></div>
+      <div><strong>10M+</strong><span>Tata Neu Users</span></div>
+      <div><strong>11M</strong><span>Safeway Monthly Downloads</span></div>
+      <div><strong>3–5</strong><span>Developers Mentored</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="section-head">
+    <div class="badge">▣ <span>Selected Work</span></div>
+    <h2>Projects <em>& Impact</em></h2>
+    <p>Selected products and platforms I've helped architect, build and scale.</p>
+    <div class="tabs" id="projectTabs">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="mobile">Mobile App</button>
+      <button data-filter="retail">Retail</button>
+      <button data-filter="banking">Banking</button>
+      <button data-filter="sports">Sports</button>
+    </div>
+  </div>
+  <div class="project-grid">
+    <article class="project-card" data-category="sports">
+      <div class="project-visual wimbledon"><div class="visual-orb"></div><span>WIMBLEDON</span><small>LIVE SPORTS PLATFORM</small></div>
+      <div class="project-body"><div class="project-top"><h3>Wimbledon Official App</h3><span class="featured">✦ Featured</span></div><b>Real-time tournament experience for a global audience</b><p>Architected scalable Android solutions using Kotlin, Jetpack Compose and Clean Architecture for live scores, player stats, court schedules and tournament updates.</p><div class="tags"><i>Kotlin</i><i>Compose</i><i>Clean Architecture</i><i>Modular</i></div><div class="project-meta"><span>IBM India · Current</span><a href="https://play.google.com/store/apps/details?id=com.ibm.events.android.wimbledon" target="_blank">View App ↗</a></div></div>
+    </article>
+    <article class="project-card" data-category="banking">
+      <div class="project-visual banking"><div class="phone-card">N</div><span>SECURE BANKING</span></div>
+      <div class="project-body"><div class="project-top"><h3>Nationwide Building Society</h3><span class="featured">✦ Featured</span></div><b>Secure UK digital banking experience</b><p>Implemented certificate pinning, Android Keystore, encrypted storage and OAuth 2.0 / JWT for financial-grade mobile security, including contactless payment flows.</p><div class="tags"><i>Kotlin</i><i>Security</i><i>OAuth 2.0</i><i>Keystore</i></div><div class="project-meta"><span>IBM India · UK Banking</span><a href="https://play.google.com/store/apps/details?id=co.uk.Nationwide.Mobile" target="_blank">View App ↗</a></div></div>
+    </article>
+    <article class="project-card" data-category="retail">
+      <div class="project-visual safeway"><div class="aisle">SAFEWAY</div><small>DEALS · DELIVERY · REWARDS</small></div>
+      <div class="project-body"><div class="project-top"><h3>Safeway Deals & Delivery</h3></div><b>US grocery retail super-app</b><p>Personalised shopping, digital coupons, rewards, aisle navigation, pharmacy, pickup and delivery experiences serving a large monthly audience.</p><div class="tags"><i>Android</i><i>Retail</i><i>Modular</i><i>Performance</i></div><div class="project-meta"><span>IBM India · Albertsons</span><span>~11M monthly downloads</span></div></div>
+    </article>
+    <article class="project-card" data-category="retail">
+      <div class="project-visual tata"><div class="neu">neu</div><small>15+ TATA BRANDS · 10M+ USERS</small></div>
+      <div class="project-body"><div class="project-top"><h3>Tata Neu Super App</h3><span class="featured">✦ Featured</span></div><b>Unified digital platform across the Tata ecosystem</b><p>Led Android engineering for a multi-brand platform spanning grocery, electronics, finance and travel, with modular architecture and microservices-backed APIs.</p><div class="tags"><i>Kotlin</i><i>MVVM</i><i>Clean Architecture</i><i>REST</i></div><div class="project-meta"><span>TCS · Tata Digital</span><span>10M+ users</span></div></div></article>
+    <article class="project-card" data-category="mobile">
+      <div class="project-visual kids"><div class="kids-title">Appystore</div><small>LEARN · PLAY · DISCOVER</small></div>
+      <div class="project-body"><div class="project-top"><h3>Appystore</h3><span class="award">★ Best App for Kids</span></div><b>Learning platform for children aged 0–8</b><p>Built an Android learning platform spanning rhymes, phonics, stories, science and math across 5,000+ curated videos and 18 learning areas.</p><div class="tags"><i>Android</i><i>Java</i><i>Media</i><i>Kids</i></div><div class="project-meta"><span>Indus Net Technologies</span><span>200K+ downloads · 4.5★</span></div></div></article>
+    <article class="project-card" data-category="mobile">
+      <div class="project-visual ble"><div class="radar"></div><span>BLE PROXIMITY</span></div>
+      <div class="project-body"><div class="project-top"><h3>BLE Proximity Detection</h3></div><b>Enterprise IoT asset tracking</b><p>Developed at Ericsson HQ in Stockholm to locate lost Bluetooth-enabled devices using BLE advertisement signal tracking and real-time proximity guidance.</p><div class="tags"><i>Android</i><i>BLE</i><i>IoT</i><i>Ericsson</i></div><div class="project-meta"><span>TCS · Stockholm</span><span>Enterprise IoT</span></div></div></article>
+  </div>
+</section>
+
+<section id="experience" class="section experience-section">
+  <div class="section-head"><div class="badge">◷ <span>Career Journey</span></div><h2>Professional <em>Experience</em></h2><p>11.6+ years building mobile products, leading teams and solving high-scale engineering problems.</p></div>
+  <div class="timeline">
+    <article class="job"><div class="dot"></div><div class="job-date">09/2022 — Present</div><div class="job-card"><div class="job-title"><div><h3>Lead Android Developer</h3><strong>IBM India Pvt. Ltd.</strong></div><span>Kolkata, India</span></div><ul><li>Architected and delivered the Wimbledon 2026 mobile platform using Kotlin, Jetpack Compose and Clean Architecture.</li><li>Engineered secure Nationwide banking features using Certificate Pinning, Android Keystore, encrypted storage and OAuth 2.0 / JWT.</li><li>Introduced modular architecture and Gradle optimisations including KSP and configuration cache.</li><li>Accelerated development velocity by ~30% using GitHub Copilot, Claude Code, Cursor, Codex and Gemini.</li><li>Mentored 3–5 Android developers and drove architecture reviews and code quality practices.</li><li>Improved CI/CD with Jenkins and GitHub Actions and owned performance work across cold start, ANRs and memory leaks.</li></ul><div class="tags"><i>Kotlin</i><i>Jetpack Compose</i><i>Architecture</i><i>Security</i><i>AI-assisted Development</i></div></div></article>
+    <article class="job"><div class="dot"></div><div class="job-date">05/2018 — 09/2022</div><div class="job-card"><div class="job-title"><div><h3>Senior Android Developer (Group Lead)</h3><strong>Tata Consultancy Services Ltd.</strong></div><span>Kolkata · Stockholm</span></div><ul><li>Led Android engineering for Tata Neu, integrating 15+ Tata brands and serving 10M+ users.</li><li>Designed modular MVVM + Clean Architecture backed by microservices and REST APIs.</li><li>Managed 5–7 Android developers through Agile delivery, reviews and architecture discussions.</li><li>Worked on-site at Ericsson HQ, Stockholm on BLE-based proximity detection for IoT asset tracking.</li><li>Integrated NeuCoins rewards redemption and multi-service payment flows.</li></ul><div class="tags"><i>Kotlin</i><i>MVVM</i><i>Clean Architecture</i><i>BLE</i><i>Agile</i></div></div></article>
+    <article class="job"><div class="dot"></div><div class="job-date">10/2014 — 04/2018</div><div class="job-card"><div class="job-title"><div><h3>Android Developer</h3><strong>Indus Net Technologies Pvt. Ltd.</strong></div><span>Kolkata, India</span></div><ul><li>Built and shipped Appystore, recognised by Google Play as Best App for Kids in 2017.</li><li>Developed and deployed 10+ Android applications across Retail, Media and Enterprise domains.</li><li>Improved startup performance and reduced memory footprint through profiling and optimisation.</li><li>Collaborated with designers using Figma and Zeplin to deliver pixel-perfect, accessible interfaces.</li><li>Participated across Agile planning, estimation, UAT coordination and release management.</li></ul><div class="tags"><i>Android</i><i>Java</i><i>Media</i><i>Retail</i><i>Accessibility</i></div></div></article>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="section-head"><div class="badge">⌘ <span>Tech Stack</span></div><h2>Tools I <em>Work With</em></h2><p>A modern Android engineering stack focused on architecture, performance, security and delivery.</p></div>
+  <div class="skills">
+    <div class="skill-group"><h3>Android Core</h3><div><span>Kotlin</span><span>Java</span><span>Android SDK</span><span>AndroidX</span><span>Jetpack Compose</span><span>XML</span><span>Material Design</span></div></div>
+    <div class="skill-group"><h3>Architecture</h3><div><span>MVVM</span><span>MVI</span><span>MVP</span><span>Clean Architecture</span><span>Modular Architecture</span><span>SOLID</span><span>TDD</span></div></div>
+    <div class="skill-group"><h3>Jetpack & Async</h3><div><span>ViewModel</span><span>LiveData</span><span>Flow</span><span>Coroutines</span><span>RoomDB</span><span>WorkManager</span><span>Paging 3</span><span>DataStore</span></div></div>
+    <div class="skill-group"><h3>Networking & Security</h3><div><span>Retrofit</span><span>OkHttp</span><span>REST APIs</span><span>GraphQL</span><span>OAuth 2.0</span><span>JWT</span><span>Certificate Pinning</span><span>Android Keystore</span></div></div>
+    <div class="skill-group"><h3>Testing & Quality</h3><div><span>JUnit</span><span>Mockito</span><span>Truth</span><span>Espresso</span><span>Robolectric</span><span>SonarQube</span><span>Lint</span><span>Spotless</span></div></div>
+    <div class="skill-group"><h3>CI/CD & AI</h3><div><span>Jenkins</span><span>GitHub Actions</span><span>GitLab CI</span><span>Bitrise</span><span>Gradle</span><span>GitHub Copilot</span><span>Claude Code</span><span>Cursor</span><span>Gemini</span><span>Codex</span></div></div>
+    <div class="skill-group"><h3>Cross Platform</h3><div><span>Kotlin Multiplatform</span><span>Compose Multiplatform</span><span>Flutter</span><span>Dart</span><span>BLE</span><span>RFID</span><span>NFC</span><span>Android Automotive</span></div></div>
+    <div class="skill-group"><h3>Analytics & Tools</h3><div><span>Firebase</span><span>Crashlytics</span><span>Adobe Analytics</span><span>JIRA</span><span>Confluence</span><span>Figma</span><span>Zeplin</span><span>Git</span></div></div>
+  </div>
+</section>
+
+<section class="section recognition">
+  <div class="section-head"><div class="badge">★ <span>Recognition</span></div><h2>Achievements & <em>Certifications</em></h2></div>
+  <div class="recognition-grid">
+    <div class="recognition-card"><strong>Client Appreciation Star of the Sprint</strong><span>IBM India Pvt. Ltd.</span><p>For exceeding delivery milestones on critical banking and sports platform features.</p></div>
+    <div class="recognition-card"><strong>Certificate of Appreciation</strong><span>Tata Consultancy Services</span><p>For outstanding technical delivery and engineering leadership across high-impact launches.</p></div>
+    <div class="recognition-card"><strong>WalkOverWalls (WOW!) Award</strong><span>Indus Net Technologies</span><p>For consistent delivery excellence, problem-solving and technical innovation.</p></div>
+    <div class="recognition-card"><strong>Best App for Kids — Google Play 2017</strong><span>Appystore</span><p>Recognised by Google Play; the app surpassed 200K+ downloads with a 4.5 rating.</p></div>
+  </div>
+  <div class="certs"><span>IBM Generative AI Developer · 2025</span><span>Android Enterprise Certified Associate · 2024</span><span>IBM Enterprise Design Thinking Practitioner · 2024</span><span>Samsung Knox Associate · 2023</span><span>Samsung Galaxy Business Associate · 2023</span></div>
+</section>
+
+
+<section id="blog" class="section blog-section">
+  <div class="section-head">
+    <div class="badge">✎ <span>Engineering Notes</span></div>
+    <h2>What I <em>Think About</em></h2>
+    <p>Practical topics drawn from the engineering work, architecture and delivery experience in my career.</p>
+  </div>
+  <div class="blog-grid">
+    <article class="blog-card"><span>ANDROID · ARCHITECTURE</span><h3>Modern Android Architecture at Scale</h3><p>How Kotlin, Jetpack Compose, MVVM/MVI, Clean Architecture and modularisation can keep large mobile codebases maintainable.</p><a href="#skills" data-nav>Explore stack →</a></article>
+    <article class="blog-card"><span>PERFORMANCE · QUALITY</span><h3>Making Android Apps Faster & More Reliable</h3><p>Lessons from cold-start optimisation, ANR reduction, memory profiling, Crashlytics, lint and production monitoring.</p><a href="#experience" data-nav>View experience →</a></article>
+    <article class="blog-card"><span>SECURITY · BANKING</span><h3>Security Patterns for Financial Apps</h3><p>Practical mobile security using certificate pinning, Android Keystore, encrypted storage and OAuth 2.0 / JWT.</p><a href="#projects" data-nav>See Nationwide →</a></article>
+    <article class="blog-card"><span>AI · PRODUCTIVITY</span><h3>AI-Assisted Android Development</h3><p>Using GitHub Copilot, Claude Code, Cursor, Codex and Gemini as engineering accelerators while keeping architecture and code quality under human control.</p><a href="#experience" data-nav>See impact →</a></article>
+  </div>
+</section>
+
+<section id="contact" class="contact section">
+  <div class="glow blue"></div><div class="contact-inner">
+    <div class="badge">✦ <span>Get In Touch</span></div>
+    <h2>Let's build something <em>great.</em></h2>
+    <p>I'm open to Senior Android, Mobile Architect and engineering leadership opportunities where I can build high-scale products and help teams ship better software.</p>
+    <div class="contact-actions"><a class="primary" href="mailto:chakraborty.dipanjan07@gmail.com">Send an Email ↗</a><button class="secondary" id="copyEmail2">Copy Email</button></div>
+    <div class="contact-details"><span>📍 Kolkata, India</span><span>✉ chakraborty.dipanjan07@gmail.com</span><span>☎ +91 89024 57437</span></div>
+  </div>
+</section>
+</main>
+
+<footer><span>© 2026 Dipanjan Chakraborty</span><span>Android · Kotlin · Compose · Architecture</span></footer>
+
+<div id="palette" class="palette" aria-hidden="true">
+  <div class="palette-box">
+    <input id="paletteInput" placeholder="Search or jump to..." autocomplete="off">
+    <button data-target="#hero">About</button><button data-target="#projects">Projects</button><button data-target="#experience">Experience</button><button data-target="#skills">Skills</button><button data-target="#contact">Contact</button>
+  </div>
+</div>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
