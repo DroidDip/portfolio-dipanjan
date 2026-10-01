@@ -12,164 +12,1157 @@
 </head>
 <body>
 <div id="spotlight"></div>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
 
 <header id="navbar">
+  <div id="scroll-progress"></div>
   <div class="nav-shell">
     <a class="brand" href="#hero" data-nav>
       <div class="avatar mini">DC</div>
-      <div>
-        <strong>Dipanjan</strong><span class="online"></span>
-        <small>Senior Android Engineer</small>
+      <div class="brand-text">
+        <strong>Dipanjan Chakraborty</strong>
+        <small>PORTFOLIO</small>
       </div>
     </a>
     <nav class="desktop-nav">
-      <a href="#hero" data-nav class="active">About</a>
-      <a href="#projects" data-nav>Projects</a>
-      <a href="#experience" data-nav>Experience</a>
+      <a href="#hero" data-nav class="active">Home</a>
+      <a href="#about" data-nav>About</a>
       <a href="#skills" data-nav>Skills</a>
-      <a href="#blog" data-nav>Blog</a>
+      <a href="#techstack" data-nav>Tech Stack</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#projects" data-nav>Projects</a>
+      <a href="#education" data-nav>Education</a>
+      <a href="#certifications" data-nav>Certifications</a>
       <a href="#contact" data-nav>Contact</a>
     </nav>
     <div class="nav-actions">
-      <button class="lang-btn" id="langBtn" aria-label="Language">◎ EN</button>
-      <button class="icon-btn" id="commandBtn" aria-label="Open command palette">⌘</button>
-      <a href="#contact" class="nav-cta" data-nav>Contact <span>↗</span></a>
+      <a href="assets/Dipanjan_Chakraborty_SeniorAndroidDeveloper_Resume.pdf" download class="nav-resume-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Resume
+      </a>
+      <a href="#contact" class="nav-talk-btn" data-nav>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Let's Talk
+      </a>
     </div>
   </div>
 </header>
 
 <main>
+
+<!-- ══════════════════════════════════════════
+     1. HOME
+     ══════════════════════════════════════════ -->
 <section id="hero" class="hero section">
-  <div class="glow blue"></div><div class="glow purple"></div><div class="glow pink"></div>
+  <div class="hero-bg-glows">
+    <div class="glow blue"></div>
+    <div class="glow purple"></div>
+    <div class="glow pink"></div>
+  </div>
   <div class="hero-inner">
-    <div class="avatar-wrap"><div class="avatar profile-holder" id="profileHolder"><img id="profileImage" src="assets/profile.jpg" alt="Dipanjan Chakraborty" onerror="this.style.display='none'"><span id="profileInitials">DC</span></div><i>✦</i></div>
-    <div class="eyebrow">11.6+ YEARS · ANDROID · MOBILE ARCHITECTURE</div>
-    <h1><small>Hi, I'm</small><span class="first-name">Dipanjan</span><span class="last-name">Chakraborty</span><b class="wave-hand" aria-label="waving hand">👋</b></h1>
-    <div class="role"><b>&lt;</b><span id="roleText">Senior Android Engineer</span><b>/&gt;</b></div>
-    <p class="hero-copy">I design and build scalable, secure and high-performance Android applications with Kotlin, Jetpack Compose and modern architecture — across banking, retail and sports technology.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="primary" data-nav>Explore Work <span>→</span></a>
-      <a href="#contact" class="secondary" data-nav>Get In Touch <span>↗</span></a>
+    <!-- Left Column -->
+    <div class="hero-left">
+      <div class="hero-available-badge">
+        <span class="hero-badge-dot"></span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Available for new opportunities
+      </div>
+
+      <h1 class="hero-heading">
+        <span class="hero-im" id="twIm"></span>
+        <span class="hero-name-row">
+          <span class="hero-firstname" id="twFirst"></span>
+          <span class="hero-lastname" id="twLast"></span>
+        </span>
+      </h1>
+
+      <div class="hero-role-typewriter">
+        <span id="roleText"></span><span class="hero-cursor" id="twCursor">|</span>
+      </div>
+
+      <p class="hero-copy" id="twCopy" style="opacity:0"></p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="hero-btn hero-btn-primary" data-nav>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          View Projects
+        </a>
+        <a href="assets/Dipanjan_Chakraborty_SeniorAndroidDeveloper_Resume.pdf" download class="hero-btn hero-btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Resume
+        </a>
+        <a href="#contact" class="hero-btn hero-btn-outline" data-nav>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Contact Me
+        </a>
+      </div>
+
+      <div class="hero-connect">
+        <span class="hero-connect-label">CONNECT</span>
+        <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub" class="hero-social-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/dipanjanchakraborty-b4b15a7a/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="hero-social-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" class="hero-social-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="mailto:chakraborty.dipanjan07@gmail.com" aria-label="Email" class="hero-social-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="socials">
-      <a class="social-btn" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
-      <a class="social-btn" href="https://www.linkedin.com/in/dipanjanchakraborty-b4b15a7a/" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
-      
-      <a class="resume" href="assets/Dipanjan_Chakraborty_SeniorAndroidDeveloper_Resume.pdf" download>↓ Download Resume</a>
+
+    <!-- Right Column: Visual Card -->
+    <div class="hero-right">
+      <img src="assets/home_info.png" alt="Dipanjan Chakraborty profile overview" class="hero-info-image">
     </div>
-    <div class="stats">
-      <div><strong>11.6+</strong><span>Years Experience</span></div>
-      <div><strong>10M+</strong><span>Tata Neu Users</span></div>
-      <div><strong>11M</strong><span>Safeway Monthly Downloads</span></div>
-      <div><strong>3–5</strong><span>Developers Mentored</span></div>
+  </div>
+
+  <!-- Scroll Down -->
+  <div class="hero-scroll-hint">
+    <span>Scroll Down</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     2. ABOUT
+     ══════════════════════════════════════════ -->
+<section id="about" class="section about-v2">
+  <!-- Section header -->
+  <div class="about-section-head">
+    <div class="badge">● <span>About Me</span></div>
+    <h2 class="about-headline">Building <em>Android Experiences</em> That Matter</h2>
+    <p class="about-subhead">Combining technical depth and engineering craft to deliver high-scale, secure mobile applications.</p>
+  </div>
+
+  <!-- Main two-column layout -->
+  <div class="about-v2-grid">
+
+    <!-- LEFT: Profile photo card -->
+    <div class="about-photo-col">
+      <div class="about-photo-card">
+        <div class="about-photo-img-wrap">
+          <img
+            src="assets/profile_image.jpeg"
+            alt="Dipanjan Chakraborty"
+            class="about-photo-img"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          >
+          <div class="about-photo-fallback" style="display:none">DC</div>
+        </div>
+        <div class="about-photo-footer">
+          <div class="about-photo-info">
+            <strong>Dipanjan Chakraborty</strong>
+            <span class="about-photo-role">Lead Android Developer · IBM India</span>
+            <span class="about-photo-location">Kolkata, West Bengal, India</span>
+          </div>
+          <span class="about-photo-online"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Story + objective + highlights -->
+    <div class="about-content-col">
+
+      <!-- My Story -->
+      <div class="about-story-block">
+        <h3 class="about-block-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          My Story
+        </h3>
+        <p>My Android engineering journey spans <strong>11.6+ years</strong> building high-performance mobile applications across banking, retail and sports. I specialise in Kotlin, Jetpack Compose and Clean Architecture — from crafting pixel-perfect UIs and designing secure data flows to integrating OAuth, Keystore, GraphQL APIs and AI-assisted development workflows.</p>
+      </div>
+
+      <!-- Career Objective -->
+      <div class="about-story-block">
+        <h3 class="about-block-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          Career Objective
+        </h3>
+        <p>I'm a Senior Android Engineer passionate about building world-class mobile products — from super-apps serving millions of users to secure banking platforms and live sports experiences. I thrive in architecture-driven teams where performance, quality and mentoring matter.</p>
+      </div>
+
+      <!-- Two highlight cards -->
+      <div class="about-highlights-row">
+        <div class="about-hl-card">
+          <div class="about-hl-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div>
+            <strong>Clean Architecture</strong>
+            <span>MVVM · MVI · Modular · SOLID · TDD</span>
+          </div>
+        </div>
+        <div class="about-hl-card">
+          <div class="about-hl-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div>
+            <strong>Security First</strong>
+            <span>Keystore · Certificate Pinning · OAuth 2.0</span>
+          </div>
+        </div>
+        <div class="about-hl-card">
+          <div class="about-hl-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div>
+            <strong>Performance Engineering</strong>
+            <span>Cold-start · ANR elimination · Memory profiling</span>
+          </div>
+        </div>
+        <div class="about-hl-card">
+          <div class="about-hl-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <strong>Team Leadership</strong>
+            <span>Led 5–7 engineers · Architecture reviews · Agile</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="about-stats-bar">
+    <div class="about-stat-card">
+      <span class="about-stat-num">11.6+</span>
+      <strong>Years Experience</strong>
+      <span class="about-stat-desc">Architecting scalable Android solutions</span>
+    </div>
+    <div class="about-stat-card">
+      <span class="about-stat-num">10+</span>
+      <strong>Apps Shipped</strong>
+      <span class="about-stat-desc">Production apps across Banking, Retail & Sports</span>
+    </div>
+    <div class="about-stat-card">
+      <span class="about-stat-num">10M+</span>
+      <strong>Users Served</strong>
+      <span class="about-stat-desc">Tata Neu · Safeway · Nationwide · Wimbledon</span>
+    </div>
+    <div class="about-stat-card">
+      <span class="about-stat-num">99.9%</span>
+      <strong>Crash-Free Rate</strong>
+      <span class="about-stat-desc">Consistently rated top quality by stakeholders</span>
     </div>
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════
+     3. SKILLS
+     ══════════════════════════════════════════ -->
+<section id="skills" class="section skills-showcase">
+  <div class="section-head skills-showcase-head">
+    <div class="badge">⚡ <span>Technical Mastery</span></div>
+    <h2>Skills & <em>Core Capabilities</em></h2>
+    <p>A focused breakdown of the technical strengths I use to design, ship and scale Android products.</p>
+  </div>
+  <div class="skills-category-row" id="skillsCategoryRow">
+    <button class="skills-category-chip active" data-skill-filter="all" type="button">All Skills</button>
+    <button class="skills-category-chip" data-skill-filter="android" type="button">Android Engineering</button>
+    <button class="skills-category-chip" data-skill-filter="architecture" type="button">Architecture & Patterns</button>
+    <button class="skills-category-chip" data-skill-filter="security" type="button">Security & Networking</button>
+    <button class="skills-category-chip" data-skill-filter="performance" type="button">Performance & Quality</button>
+    <button class="skills-category-chip" data-skill-filter="leadership" type="button">Leadership & AI</button>
+  </div>
+  <div class="skills-overview-grid">
+    <article class="skill-overview-card skill-overview-card-featured" data-skill-category="android">
+      <div class="skill-card-top">
+        <div class="skill-card-title-wrap">
+          <span class="skill-card-check">✓</span>
+          <h3>Android Development</h3>
+        </div>
+        <span class="skill-card-tag">Primary</span>
+      </div>
+      <p>Native Android engineering with Kotlin, Java, Jetpack Compose, XML, Material Design and the full Jetpack ecosystem.</p>
+      <div class="skill-card-pills">
+        <span>Kotlin</span>
+        <span>Jetpack Compose</span>
+        <span>Android SDK</span>
+        <span>Material 3</span>
+      </div>
+    </article>
+    <article class="skill-overview-card" data-skill-category="architecture">
+      <div class="skill-card-top">
+        <div class="skill-card-title-wrap">
+          <span class="skill-card-check">✓</span>
+          <h3>Architecture & Patterns</h3>
+        </div>
+        <span class="skill-card-tag">Core</span>
+      </div>
+      <p>Architecture-driven delivery using MVVM, MVI, MVP, Clean Architecture, modularisation, SOLID and TDD practices.</p>
+      <div class="skill-card-pills">
+        <span>MVVM</span>
+        <span>MVI</span>
+        <span>Clean Architecture</span>
+        <span>TDD</span>
+      </div>
+    </article>
+    <article class="skill-overview-card" data-skill-category="security">
+      <div class="skill-card-top">
+        <div class="skill-card-title-wrap">
+          <span class="skill-card-check">✓</span>
+          <h3>Security & Networking</h3>
+        </div>
+        <span class="skill-card-tag">Secure</span>
+      </div>
+      <p>Secure mobile application delivery with Retrofit, REST, GraphQL, OAuth 2.0, JWT, certificate pinning and Keystore.</p>
+      <div class="skill-card-pills">
+        <span>OAuth 2.0</span>
+        <span>JWT</span>
+        <span>GraphQL</span>
+        <span>Keystore</span>
+      </div>
+    </article>
+    <article class="skill-overview-card" data-skill-category="performance">
+      <div class="skill-card-top">
+        <div class="skill-card-title-wrap">
+          <span class="skill-card-check">✓</span>
+          <h3>Performance & Quality</h3>
+        </div>
+        <span class="skill-card-tag">Delivery</span>
+      </div>
+      <p>Performance optimisation and engineering quality through profiling, ANR reduction, CI/CD, testing and static analysis.</p>
+      <div class="skill-card-pills">
+        <span>Profiling</span>
+        <span>CI/CD</span>
+        <span>JUnit</span>
+        <span>SonarQube</span>
+      </div>
+    </article>
+    <article class="skill-overview-card" data-skill-category="leadership">
+      <div class="skill-card-top">
+        <div class="skill-card-title-wrap">
+          <span class="skill-card-check">✓</span>
+          <h3>AI-Assisted Development</h3>
+        </div>
+        <span class="skill-card-tag">Modern</span>
+      </div>
+      <p>Engineering acceleration with GitHub Copilot, Claude Code, Cursor, Gemini and Codex for faster iteration and delivery.</p>
+      <div class="skill-card-pills">
+        <span>Copilot</span>
+        <span>Claude Code</span>
+        <span>Cursor</span>
+        <span>Gemini</span>
+      </div>
+    </article>
+    <article class="skill-overview-card" data-skill-category="leadership">
+      <div class="skill-card-top">
+        <div class="skill-card-title-wrap">
+          <span class="skill-card-check">✓</span>
+          <h3>Leadership & Mentoring</h3>
+        </div>
+        <span class="skill-card-tag">Impact</span>
+      </div>
+      <p>Leading Android teams, mentoring engineers, reviewing architecture and driving collaborative Agile execution across projects.</p>
+      <div class="skill-card-pills">
+        <span>Mentoring</span>
+        <span>Code Review</span>
+        <span>Agile</span>
+        <span>Leadership</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     4. TECH STACK
+     ══════════════════════════════════════════ -->
+<section id="techstack" class="ts-section">
+  <!-- Floating dot particles -->
+  <div class="ts-particles" aria-hidden="true">
+    <span class="ts-dot" style="left:8%;top:18%;width:4px;height:4px;background:#60a5fa;--dur:6s;--delay:0s"></span>
+    <span class="ts-dot" style="left:20%;top:60%;width:3px;height:3px;background:#a78bfa;--dur:8s;--delay:1.2s"></span>
+    <span class="ts-dot" style="left:35%;top:25%;width:2px;height:2px;background:#38bdf8;--dur:7s;--delay:0.5s"></span>
+    <span class="ts-dot" style="left:55%;top:75%;width:4px;height:4px;background:#818cf8;--dur:5s;--delay:2s"></span>
+    <span class="ts-dot" style="left:70%;top:15%;width:3px;height:3px;background:#e879f9;--dur:9s;--delay:0.8s"></span>
+    <span class="ts-dot" style="left:82%;top:50%;width:2px;height:2px;background:#60a5fa;--dur:6.5s;--delay:1.8s"></span>
+    <span class="ts-dot" style="left:92%;top:35%;width:4px;height:4px;background:#a78bfa;--dur:7.5s;--delay:0.3s"></span>
+    <span class="ts-dot" style="left:15%;top:85%;width:3px;height:3px;background:#38bdf8;--dur:8.5s;--delay:3s"></span>
+    <span class="ts-dot" style="left:48%;top:10%;width:2px;height:2px;background:#fff;--dur:5.5s;--delay:1.5s"></span>
+    <span class="ts-dot" style="left:63%;top:88%;width:3px;height:3px;background:#e879f9;--dur:7s;--delay:2.5s"></span>
+  </div>
+
+  <div class="ts-inner">
+    <!-- Header -->
+    <div class="ts-head">
+      <div class="ts-badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        ECOSYSTEM &amp; TOOLS
+      </div>
+      <h2 class="ts-title"><em>My</em> Technology Stack</h2>
+      <p class="ts-subtitle">Modern tools, AI, cloud services, and databases for building reliable applications.</p>
+    </div>
+
+    <!-- Marquee rows -->
+    <div class="ts-marquee-wrap" aria-hidden="true">
+      <!-- Row 1 — left scroll -->
+      <div class="ts-marquee ts-marquee--left">
+        <div class="ts-marquee-track">
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#22c55e"></span><strong>Kotlin</strong><span class="ts-pill-tag">Language</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#f59e0b"></span><strong>Jetpack Compose</strong><span class="ts-pill-tag">Android</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#60a5fa"></span><strong>MVVM</strong><span class="ts-pill-tag">Architecture</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#a78bfa"></span><strong>Clean Architecture</strong><span class="ts-pill-tag">Architecture</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#f472b6"></span><strong>Flutter</strong><span class="ts-pill-tag">Mobile</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#fb923c"></span><strong>Dart</strong><span class="ts-pill-tag">Language</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#38bdf8"></span><strong>Retrofit</strong><span class="ts-pill-tag">Networking</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#818cf8"></span><strong>Coroutines</strong><span class="ts-pill-tag">Async</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#94a3b8"></span><strong>GitHub</strong><span class="ts-pill-tag">Tools</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#22c55e"></span><strong>Kotlin</strong><span class="ts-pill-tag">Language</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#f59e0b"></span><strong>Jetpack Compose</strong><span class="ts-pill-tag">Android</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#60a5fa"></span><strong>MVVM</strong><span class="ts-pill-tag">Architecture</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#a78bfa"></span><strong>Clean Architecture</strong><span class="ts-pill-tag">Architecture</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#f472b6"></span><strong>Flutter</strong><span class="ts-pill-tag">Mobile</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#fb923c"></span><strong>Dart</strong><span class="ts-pill-tag">Language</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#38bdf8"></span><strong>Retrofit</strong><span class="ts-pill-tag">Networking</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#818cf8"></span><strong>Coroutines</strong><span class="ts-pill-tag">Async</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#94a3b8"></span><strong>GitHub</strong><span class="ts-pill-tag">Tools</span></div>
+        </div>
+      </div>
+      <!-- Row 2 — right scroll -->
+      <div class="ts-marquee ts-marquee--right">
+        <div class="ts-marquee-track">
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#38bdf8"></span><strong>Firebase</strong><span class="ts-pill-tag">Backend</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#22c55e"></span><strong>RoomDB</strong><span class="ts-pill-tag">Database</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#a78bfa"></span><strong>Gemini AI</strong><span class="ts-pill-tag">AI</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#60a5fa"></span><strong>GitHub Copilot</strong><span class="ts-pill-tag">AI</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#f59e0b"></span><strong>Jenkins</strong><span class="ts-pill-tag">CI/CD</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#f472b6"></span><strong>Gradle</strong><span class="ts-pill-tag">Build</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#94a3b8"></span><strong>OAuth 2.0</strong><span class="ts-pill-tag">Security</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#818cf8"></span><strong>Espresso</strong><span class="ts-pill-tag">Testing</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#fb923c"></span><strong>Figma</strong><span class="ts-pill-tag">Design</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#38bdf8"></span><strong>Firebase</strong><span class="ts-pill-tag">Backend</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#22c55e"></span><strong>RoomDB</strong><span class="ts-pill-tag">Database</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#a78bfa"></span><strong>Gemini AI</strong><span class="ts-pill-tag">AI</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#60a5fa"></span><strong>GitHub Copilot</strong><span class="ts-pill-tag">AI</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#f59e0b"></span><strong>Jenkins</strong><span class="ts-pill-tag">CI/CD</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#f472b6"></span><strong>Gradle</strong><span class="ts-pill-tag">Build</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#94a3b8"></span><strong>OAuth 2.0</strong><span class="ts-pill-tag">Security</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#818cf8"></span><strong>Espresso</strong><span class="ts-pill-tag">Testing</span></div>
+          <div class="ts-pill"><span class="ts-pill-dot" style="background:#fb923c"></span><strong>Figma</strong><span class="ts-pill-tag">Design</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="ts-filter-row" id="tsTabs">
+      <button class="ts-filter-btn active" data-tsfilter="all">All</button>
+      <button class="ts-filter-btn" data-tsfilter="android">Android</button>
+      <button class="ts-filter-btn" data-tsfilter="mobile">Mobile</button>
+      <button class="ts-filter-btn" data-tsfilter="architecture">Architecture</button>
+      <button class="ts-filter-btn" data-tsfilter="ai">AI</button>
+      <button class="ts-filter-btn" data-tsfilter="backend">Backend</button>
+      <button class="ts-filter-btn" data-tsfilter="tools">Tools</button>
+    </div>
+
+    <!-- Tech cards grid -->
+    <div class="ts-grid" id="tsGrid">
+      <!-- Android -->
+      <div class="ts-card" data-tscategory="android"><div class="ts-card-icon" style="color:#22c55e">K</div><div class="ts-card-name">Kotlin</div><div class="ts-card-cat">ANDROID</div></div>
+      <div class="ts-card" data-tscategory="android"><div class="ts-card-icon" style="color:#60a5fa">J</div><div class="ts-card-name">Jetpack Compose</div><div class="ts-card-cat">ANDROID</div></div>
+      <div class="ts-card" data-tscategory="android"><div class="ts-card-icon" style="color:#a78bfa">A</div><div class="ts-card-name">Android SDK</div><div class="ts-card-cat">ANDROID</div></div>
+      <div class="ts-card" data-tscategory="android"><div class="ts-card-icon" style="color:#38bdf8">X</div><div class="ts-card-name">AndroidX</div><div class="ts-card-cat">ANDROID</div></div>
+      <div class="ts-card" data-tscategory="android"><div class="ts-card-icon" style="color:#f59e0b">M</div><div class="ts-card-name">Material Design</div><div class="ts-card-cat">ANDROID</div></div>
+      <div class="ts-card" data-tscategory="android"><div class="ts-card-icon" style="color:#f472b6">J</div><div class="ts-card-name">Java</div><div class="ts-card-cat">ANDROID</div></div>
+      <!-- Mobile -->
+      <div class="ts-card" data-tscategory="mobile"><div class="ts-card-icon" style="color:#38bdf8">F</div><div class="ts-card-name">Flutter</div><div class="ts-card-cat">MOBILE</div></div>
+      <div class="ts-card" data-tscategory="mobile"><div class="ts-card-icon" style="color:#fb923c">D</div><div class="ts-card-name">Dart</div><div class="ts-card-cat">MOBILE</div></div>
+      <div class="ts-card" data-tscategory="mobile"><div class="ts-card-icon" style="color:#a78bfa">K</div><div class="ts-card-name">KMP</div><div class="ts-card-cat">MOBILE</div></div>
+      <div class="ts-card" data-tscategory="mobile"><div class="ts-card-icon" style="color:#60a5fa">B</div><div class="ts-card-name">BLE / NFC</div><div class="ts-card-cat">MOBILE</div></div>
+      <!-- Architecture -->
+      <div class="ts-card" data-tscategory="architecture"><div class="ts-card-icon" style="color:#818cf8">M</div><div class="ts-card-name">MVVM</div><div class="ts-card-cat">ARCHITECTURE</div></div>
+      <div class="ts-card" data-tscategory="architecture"><div class="ts-card-icon" style="color:#60a5fa">C</div><div class="ts-card-name">Clean Architecture</div><div class="ts-card-cat">ARCHITECTURE</div></div>
+      <div class="ts-card" data-tscategory="architecture"><div class="ts-card-icon" style="color:#22c55e">M</div><div class="ts-card-name">Modular Architecture</div><div class="ts-card-cat">ARCHITECTURE</div></div>
+      <div class="ts-card" data-tscategory="architecture"><div class="ts-card-icon" style="color:#f59e0b">M</div><div class="ts-card-name">MVI</div><div class="ts-card-cat">ARCHITECTURE</div></div>
+      <!-- AI -->
+      <div class="ts-card" data-tscategory="ai"><div class="ts-card-icon" style="color:#a78bfa">G</div><div class="ts-card-name">Gemini AI</div><div class="ts-card-cat">AI</div></div>
+      <div class="ts-card" data-tscategory="ai"><div class="ts-card-icon" style="color:#60a5fa">C</div><div class="ts-card-name">GitHub Copilot</div><div class="ts-card-cat">AI</div></div>
+      <div class="ts-card" data-tscategory="ai"><div class="ts-card-icon" style="color:#38bdf8">C</div><div class="ts-card-name">Claude Code</div><div class="ts-card-cat">AI</div></div>
+      <div class="ts-card" data-tscategory="ai"><div class="ts-card-icon" style="color:#f59e0b">C</div><div class="ts-card-name">Cursor</div><div class="ts-card-cat">AI</div></div>
+      <!-- Backend -->
+      <div class="ts-card" data-tscategory="backend"><div class="ts-card-icon" style="color:#f59e0b">F</div><div class="ts-card-name">Firebase</div><div class="ts-card-cat">BACKEND</div></div>
+      <div class="ts-card" data-tscategory="backend"><div class="ts-card-icon" style="color:#38bdf8">R</div><div class="ts-card-name">Retrofit</div><div class="ts-card-cat">BACKEND</div></div>
+      <div class="ts-card" data-tscategory="backend"><div class="ts-card-icon" style="color:#22c55e">R</div><div class="ts-card-name">RoomDB</div><div class="ts-card-cat">BACKEND</div></div>
+      <div class="ts-card" data-tscategory="backend"><div class="ts-card-icon" style="color:#818cf8">G</div><div class="ts-card-name">GraphQL</div><div class="ts-card-cat">BACKEND</div></div>
+      <!-- Tools -->
+      <div class="ts-card" data-tscategory="tools"><div class="ts-card-icon" style="color:#94a3b8">G</div><div class="ts-card-name">GitHub Actions</div><div class="ts-card-cat">TOOLS</div></div>
+      <div class="ts-card" data-tscategory="tools"><div class="ts-card-icon" style="color:#f59e0b">J</div><div class="ts-card-name">Jenkins</div><div class="ts-card-cat">TOOLS</div></div>
+      <div class="ts-card" data-tscategory="tools"><div class="ts-card-icon" style="color:#60a5fa">G</div><div class="ts-card-name">Gradle</div><div class="ts-card-cat">TOOLS</div></div>
+      <div class="ts-card" data-tscategory="tools"><div class="ts-card-icon" style="color:#f472b6">F</div><div class="ts-card-name">Figma</div><div class="ts-card-cat">TOOLS</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     5. EXPERIENCE
+     ══════════════════════════════════════════ -->
+<section id="experience" class="section experience-section">
+  <div class="section-head">
+    <div class="badge exp-badge"><span class="exp-badge-dot"></span><span>Career Journey</span></div>
+    <h2>Professional <em>Experience</em></h2>
+    <p>11.6+ years building mobile products, leading teams and solving high-scale engineering problems.</p>
+  </div>
+  <div class="timeline">
+
+    <!-- Job 1 -->
+    <article class="job">
+      <div class="timeline-dot-wrap"><div class="dot"></div></div>
+      <div class="job-card">
+        <div class="job-card-header">
+          <h3 class="job-card-title"><svg class="job-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="16" height="11" rx="2" stroke="#60a5fa" stroke-width="1.5"/><path d="M7 7V5a3 3 0 016 0v2" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round"/></svg>Lead Android Developer</h3>
+          <div class="job-meta-badges">
+            <span class="job-meta-badge"><svg class="meta-icon" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="11" rx="2" stroke="#94a3b8" stroke-width="1.2"/><path d="M1 7h14" stroke="#94a3b8" stroke-width="1.2"/><path d="M5 1v4M11 1v4" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/></svg>09/2022 — Present</span>
+            <span class="job-meta-badge"><svg class="meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.75 4.5 8.5 4.5 8.5s4.5-4.75 4.5-8.5c0-2.485-2.015-4.5-4.5-4.5z" stroke="#94a3b8" stroke-width="1.2"/><circle cx="8" cy="6" r="1.5" stroke="#94a3b8" stroke-width="1.2"/></svg>Kolkata, India</span>
+          </div>
+        </div>
+        <p class="job-company">IBM India Pvt. Ltd.</p>
+        <!-- Wimbledon highlight banner -->
+        <div class="wimbledon-highlight">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#4ade80" stroke-width="1.4"/><path d="M6 10l3 3 5-6" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong>Wimbledon 2026 — Successfully Delivered under IBM</strong>
+            <span>Lead Android engineer responsible for the end-to-end delivery of the Wimbledon Official App, serving millions of global tennis fans with live scores, court schedules, player stats and real-time tournament updates during The Championships.</span>
+          </div>
+        </div>
+        <ul class="job-bullets">
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Architected the Wimbledon mobile platform from scratch using Kotlin, Jetpack Compose, Clean Architecture and modular design — sole Android engineer on a high-profile IBM client delivery.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Engineered financial-grade security for Nationwide Building Society — Certificate Pinning, Android Keystore, AES-256 encrypted storage, OAuth 2.0 / JWT and contactless payment flows.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Delivered the Safeway Deals &amp; Delivery Android app (Albertsons) — personalised shopping, digital coupons, pharmacy &amp; aisle navigation reaching ~11M monthly active users.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Accelerated team development velocity by ~30% by integrating AI-assisted coding tools — GitHub Copilot, Claude Code, Cursor, Codex and Gemini — into daily engineering workflows.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Established CI/CD pipelines with GitHub Actions, automated test coverage gates and Play Store release tracks, reducing release cycle time significantly.</li>
+        </ul>
+        <div class="job-milestones-label"><svg class="milestone-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#60a5fa" stroke-width="1.3"/><path d="M10 6v4l3 2" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round"/></svg>Key Milestones</div>
+        <div class="job-milestones">
+          <span class="milestone-pill">🎾 Wimbledon 2026 delivered on-time — millions of global users served</span>
+          <span class="milestone-pill">🏦 Nationwide banking app — financial-grade Android security</span>
+          <span class="milestone-pill">🏆 Mentored 3–5 Android developers; drove architecture reviews &amp; code quality</span>
+          <span class="milestone-pill">🛒 Safeway — ~11M monthly users across US grocery retail</span>
+        </div>
+        <div class="tags job-tags"><i>Kotlin</i><i>Jetpack Compose</i><i>MVVM</i><i>Clean Architecture</i><i>Security</i><i>CI/CD</i><i>AI Tools</i><i>Agile</i><i>GraphQL</i><i>Depenency Injection</i></div>
+      </div>
+    </article>
+
+    <!-- Job 2 -->
+    <article class="job">
+      <div class="timeline-dot-wrap"><div class="dot"></div></div>
+      <div class="job-card">
+        <div class="job-card-header">
+          <h3 class="job-card-title"><svg class="job-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="16" height="11" rx="2" stroke="#60a5fa" stroke-width="1.5"/><path d="M7 7V5a3 3 0 016 0v2" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round"/></svg>Senior Android Developer (Group Lead)</h3>
+          <div class="job-meta-badges">
+            <span class="job-meta-badge"><svg class="meta-icon" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="11" rx="2" stroke="#94a3b8" stroke-width="1.2"/><path d="M1 7h14" stroke="#94a3b8" stroke-width="1.2"/><path d="M5 1v4M11 1v4" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/></svg>05/2018 — 09/2022</span>
+            <span class="job-meta-badge"><svg class="meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.75 4.5 8.5 4.5 8.5s4.5-4.75 4.5-8.5c0-2.485-2.015-4.5-4.5-4.5z" stroke="#94a3b8" stroke-width="1.2"/><circle cx="8" cy="6" r="1.5" stroke="#94a3b8" stroke-width="1.2"/></svg>Kolkata · Stockholm</span>
+          </div>
+        </div>
+        <p class="job-company">Tata Consultancy Services Ltd.</p>
+        <ul class="job-bullets">
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Led Android engineering for Tata Neu super-app, integrating 15+ Tata brands (NeuCoin, Air Asia, BigBasket, Croma, Tata 1mg) and serving 10M+ users at launch.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Designed and implemented a scalable multi-module MVVM + Clean Architecture backed by microservices, improving build times and team parallel delivery.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Worked on-site at Ericsson HQ, Stockholm, delivering a BLE-based proximity detection system for enterprise IoT asset tracking and lost-device location guidance.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Served as Group Lead — conducted 100+ code reviews, mentored junior engineers, led sprint planning and drove adoption of Kotlin coroutines and Flow across the team.</li>
+        </ul>
+        <div class="job-milestones-label"><svg class="milestone-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#60a5fa" stroke-width="1.3"/><path d="M10 6v4l3 2" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round"/></svg>Key Milestones</div>
+        <div class="job-milestones">
+          <span class="milestone-pill">🏆 Scaled Tata Neu to 10M+ users across 15+ integrated Tata brands</span>
+          <span class="milestone-pill">✈️ On-site at Ericsson HQ Stockholm — enterprise IoT BLE delivery</span>
+          <span class="milestone-pill">👥 Group Lead — 100+ code reviews, team mentorship &amp; Agile leadership</span>
+        </div>
+        <div class="tags job-tags"><i>Kotlin</i><i>MVVM</i><i>Clean Architecture</i><i>BLE</i><i>Coroutines</i><i>Agile</i></div>
+      </div>
+    </article>
+
+    <!-- Job 3 -->
+    <article class="job">
+      <div class="timeline-dot-wrap"><div class="dot"></div></div>
+      <div class="job-card">
+        <div class="job-card-header">
+          <h3 class="job-card-title"><svg class="job-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="16" height="11" rx="2" stroke="#60a5fa" stroke-width="1.5"/><path d="M7 7V5a3 3 0 016 0v2" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round"/></svg>Android Developer</h3>
+          <div class="job-meta-badges">
+            <span class="job-meta-badge"><svg class="meta-icon" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="11" rx="2" stroke="#94a3b8" stroke-width="1.2"/><path d="M1 7h14" stroke="#94a3b8" stroke-width="1.2"/><path d="M5 1v4M11 1v4" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/></svg>10/2014 — 04/2018</span>
+            <span class="job-meta-badge"><svg class="meta-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.75 4.5 8.5 4.5 8.5s4.5-4.75 4.5-8.5c0-2.485-2.015-4.5-4.5-4.5z" stroke="#94a3b8" stroke-width="1.2"/><circle cx="8" cy="6" r="1.5" stroke="#94a3b8" stroke-width="1.2"/></svg>Kolkata, India</span>
+          </div>
+        </div>
+        <p class="job-company">Indus Net Technologies Pvt. Ltd.</p>
+        <ul class="job-bullets">
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Built and shipped Appystore — a children's learning platform spanning 5,000+ videos across 18 learning areas, recognised by Google Play as Best App for Kids in 2017.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Developed and deployed 10+ production Android applications across Retail, Media and Enterprise domains, each taken from wireframe to Play Store release.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Established scalable MVP architecture patterns and reusable UI component libraries that reduced development ramp-up time for the team.</li>
+          <li><svg class="bullet-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#3b82f6" stroke-width="1.3"/><path d="M6.5 10l2.5 2.5 4.5-5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Collaborated closely with designers using Figma and Zeplin to deliver pixel-perfect, WCAG-compliant, accessible interfaces across diverse device form factors.</li>
+        </ul>
+        <div class="job-milestones-label"><svg class="milestone-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#60a5fa" stroke-width="1.3"/><path d="M10 6v4l3 2" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round"/></svg>Key Milestones</div>
+        <div class="job-milestones">
+          <span class="milestone-pill">★ Appystore — Google Play Best App for Kids 2017, 200K+ downloads, 4.5★</span>
+          <span class="milestone-pill">📱 10+ apps shipped across Retail, Media &amp; Enterprise verticals</span>
+          <span class="milestone-pill">🎨 Pixel-perfect WCAG-compliant UI across all screen sizes</span>
+        </div>
+        <div class="tags job-tags"><i>Android</i><i>Java</i><i>Kotlin</i><i>MVP</i><i>Media</i><i>Retail</i><i>Accessibility</i></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     6. PROJECTS
+     ══════════════════════════════════════════ -->
 <section id="projects" class="section">
   <div class="section-head">
     <div class="badge">▣ <span>Selected Work</span></div>
-    <h2>Projects <em>& Impact</em></h2>
-    <p>Selected products and platforms I've helped architect, build and scale.</p>
+    <h2>Featured <em>Case Studies & Projects</em></h2>
+    <p>Selected products and platforms I've helped architect, build and scale to millions of users.</p>
     <div class="tabs" id="projectTabs">
       <button class="active" data-filter="all">All</button>
-      <button data-filter="mobile">Mobile App</button>
       <button data-filter="retail">Retail</button>
       <button data-filter="banking">Banking</button>
       <button data-filter="sports">Sports</button>
+      <button data-filter="iot">IoT / Enterprise</button>
     </div>
   </div>
   <div class="project-grid">
+
+    <!-- Wimbledon -->
     <article class="project-card" data-category="sports">
-      <div class="project-visual wimbledon"><div class="visual-orb"></div><span>WIMBLEDON</span><small>LIVE SPORTS PLATFORM</small></div>
-      <div class="project-body"><div class="project-top"><h3>Wimbledon Official App</h3><span class="featured">✦ Featured</span></div><b>Real-time tournament experience for a global audience</b><p>Architected scalable Android solutions using Kotlin, Jetpack Compose and Clean Architecture for live scores, player stats, court schedules and tournament updates.</p><div class="tags"><i>Kotlin</i><i>Compose</i><i>Clean Architecture</i><i>Modular</i></div><div class="project-meta"><span>IBM India · Current</span><a href="https://play.google.com/store/apps/details?id=com.ibm.events.android.wimbledon" target="_blank">View App ↗</a></div></div>
+      <div class="project-thumb">
+        <img src="assets/wimbledon.jpg" alt="Wimbledon Official App screenshot" loading="lazy">
+        <div class="project-thumb-overlay"></div>
+        <span class="project-cat-badge"><span class="project-badge-dot sports"></span>Sports</span>
+        <span class="project-featured-badge">✦ Featured</span>
+      </div>
+      <div class="project-body">
+        <h3>Wimbledon Official App</h3>
+        <p class="project-subtitle">Real-Time Global Tennis Experience · IBM</p>
+        <p>Architected the full Android platform using Kotlin, Jetpack Compose and Clean Architecture — sole Android engineer delivering live scores, player stats, court schedules and tournament updates to millions of fans during The Championships.</p>
+        <div class="project-stats">
+          <span class="ps-stat ps-rating"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.8 · 1M+ installs</span>
+          <span class="ps-stat ps-updated"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated Jul 12, 2026</span>
+        </div>
+        <div class="tags"><i>Kotlin</i><i>Compose</i><i>Clean Architecture</i><i>Modular</i><i>IBM</i></div>
+        <div class="project-meta">
+          <span>IBM India · Current</span>
+          <a href="https://play.google.com/store/apps/details?id=com.ibm.events.android.wimbledon" target="_blank">View on Play Store ↗</a>
+        </div>
+      </div>
     </article>
+
+    <!-- Nationwide -->
     <article class="project-card" data-category="banking">
-      <div class="project-visual banking"><div class="phone-card">N</div><span>SECURE BANKING</span></div>
-      <div class="project-body"><div class="project-top"><h3>Nationwide Building Society</h3><span class="featured">✦ Featured</span></div><b>Secure UK digital banking experience</b><p>Implemented certificate pinning, Android Keystore, encrypted storage and OAuth 2.0 / JWT for financial-grade mobile security, including contactless payment flows.</p><div class="tags"><i>Kotlin</i><i>Security</i><i>OAuth 2.0</i><i>Keystore</i></div><div class="project-meta"><span>IBM India · UK Banking</span><a href="https://play.google.com/store/apps/details?id=co.uk.Nationwide.Mobile" target="_blank">View App ↗</a></div></div>
+      <div class="project-thumb">
+        <img src="assets/nbs.png" alt="Nationwide Building Society app screenshot" loading="lazy">
+        <div class="project-thumb-overlay"></div>
+        <span class="project-cat-badge"><span class="project-badge-dot banking"></span>Banking</span>
+        <span class="project-featured-badge">✦ Featured</span>
+      </div>
+      <div class="project-body">
+        <h3>Nationwide Building Society</h3>
+        <p class="project-subtitle">Secure UK Digital Banking · IBM</p>
+        <p>Implemented financial-grade Android security — Certificate Pinning, Android Keystore, AES-256 encrypted storage, OAuth 2.0 / JWT and contactless payment flows for one of the UK's largest building societies.</p>
+        <div class="project-stats">
+          <span class="ps-stat ps-rating"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.6 · 5M+ installs</span>
+          <span class="ps-stat ps-updated"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated Aug 5, 2026</span>
+        </div>
+        <div class="tags"><i>Kotlin</i><i>Security</i><i>OAuth 2.0</i><i>Keystore</i><i>IBM</i></div>
+        <div class="project-meta">
+          <span>IBM India · UK Banking</span>
+          <a href="https://play.google.com/store/apps/details?id=co.uk.Nationwide.Mobile" target="_blank">View on Play Store ↗</a>
+        </div>
+      </div>
     </article>
+
+    <!-- Safeway -->
     <article class="project-card" data-category="retail">
-      <div class="project-visual safeway"><div class="aisle">SAFEWAY</div><small>DEALS · DELIVERY · REWARDS</small></div>
-      <div class="project-body"><div class="project-top"><h3>Safeway Deals & Delivery</h3></div><b>US grocery retail super-app</b><p>Personalised shopping, digital coupons, rewards, aisle navigation, pharmacy, pickup and delivery experiences serving a large monthly audience.</p><div class="tags"><i>Android</i><i>Retail</i><i>Modular</i><i>Performance</i></div><div class="project-meta"><span>IBM India · Albertsons</span><span>~11M monthly downloads</span></div></div>
+      <div class="project-thumb">
+        <img src="assets/safeway.jpg" alt="Safeway Deals and Delivery app screenshot" loading="lazy">
+        <div class="project-thumb-overlay"></div>
+        <span class="project-cat-badge"><span class="project-badge-dot retail"></span>Retail</span>
+      </div>
+      <div class="project-body">
+        <h3>Safeway Deals &amp; Delivery</h3>
+        <p class="project-subtitle">US Grocery Retail Super-App · Albertsons</p>
+        <p>Personalised shopping, digital coupons, rewards, aisle navigation, pharmacy, pickup and delivery experiences — serving ~11M monthly active users across the Albertsons Companies portfolio.</p>
+        <div class="project-stats">
+          <span class="ps-stat ps-rating"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.7 · 10M+ installs</span>
+          <span class="ps-stat ps-updated"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated Aug 12, 2026</span>
+        </div>
+        <div class="tags"><i>Android</i><i>Kotlin</i><i>Retail</i><i>Modular</i><i>Performance</i></div>
+        <div class="project-meta">
+          <span>IBM India · Albertsons · ~11M MAU</span>
+          <a href="https://play.google.com/store/apps/details?id=com.safeway.client.android.safeway" target="_blank">View on Play Store ↗</a>
+        </div>
+      </div>
     </article>
+
+    <!-- Albertsons -->
     <article class="project-card" data-category="retail">
-      <div class="project-visual tata"><div class="neu">neu</div><small>15+ TATA BRANDS · 10M+ USERS</small></div>
-      <div class="project-body"><div class="project-top"><h3>Tata Neu Super App</h3><span class="featured">✦ Featured</span></div><b>Unified digital platform across the Tata ecosystem</b><p>Led Android engineering for a multi-brand platform spanning grocery, electronics, finance and travel, with modular architecture and microservices-backed APIs.</p><div class="tags"><i>Kotlin</i><i>MVVM</i><i>Clean Architecture</i><i>REST</i></div><div class="project-meta"><span>TCS · Tata Digital</span><span>10M+ users</span></div></div></article>
-    <article class="project-card" data-category="mobile">
-      <div class="project-visual kids"><div class="kids-title">Appystore</div><small>LEARN · PLAY · DISCOVER</small></div>
-      <div class="project-body"><div class="project-top"><h3>Appystore</h3><span class="award">★ Best App for Kids</span></div><b>Learning platform for children aged 0–8</b><p>Built an Android learning platform spanning rhymes, phonics, stories, science and math across 5,000+ curated videos and 18 learning areas.</p><div class="tags"><i>Android</i><i>Java</i><i>Media</i><i>Kids</i></div><div class="project-meta"><span>Indus Net Technologies</span><span>200K+ downloads · 4.5★</span></div></div></article>
-    <article class="project-card" data-category="mobile">
-      <div class="project-visual ble"><div class="radar"></div><span>BLE PROXIMITY</span></div>
-      <div class="project-body"><div class="project-top"><h3>BLE Proximity Detection</h3></div><b>Enterprise IoT asset tracking</b><p>Developed at Ericsson HQ in Stockholm to locate lost Bluetooth-enabled devices using BLE advertisement signal tracking and real-time proximity guidance.</p><div class="tags"><i>Android</i><i>BLE</i><i>IoT</i><i>Ericsson</i></div><div class="project-meta"><span>TCS · Stockholm</span><span>Enterprise IoT</span></div></div></article>
+      <div class="project-thumb">
+        <img src="assets/safeway.jpg" alt="Albertsons Grocery Delivery app screenshot" loading="lazy" style="filter:hue-rotate(200deg) saturate(1.2)">
+        <div class="project-thumb-overlay"></div>
+        <span class="project-cat-badge"><span class="project-badge-dot retail"></span>Retail</span>
+      </div>
+      <div class="project-body">
+        <h3>Albertsons Grocery Delivery</h3>
+        <p class="project-subtitle">US Grocery &amp; Delivery Platform · Albertsons</p>
+        <p>Delivered the Albertsons Companies flagship grocery app — personalised deals, Just for U rewards, pharmacy, pickup &amp; same-day delivery, serving millions of shoppers across the US under the IBM India delivery team.</p>
+        <div class="project-stats">
+          <span class="ps-stat ps-rating"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.8 · 5M+ installs</span>
+          <span class="ps-stat ps-updated"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated Aug 19, 2026</span>
+        </div>
+        <div class="tags"><i>Android</i><i>Kotlin</i><i>Retail</i><i>Modular</i><i>Performance</i></div>
+        <div class="project-meta">
+          <span>IBM India · Albertsons Companies</span>
+          <a href="https://play.google.com/store/apps/details?id=com.safeway.client.android.albertsons" target="_blank">View on Play Store ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Tata Neu -->
+    <article class="project-card" data-category="retail">
+      <div class="project-thumb">
+        <img src="assets/tataneu.avif" alt="Tata Neu Super App screenshot" loading="lazy">
+        <div class="project-thumb-overlay"></div>
+        <span class="project-cat-badge"><span class="project-badge-dot retail"></span>Retail</span>
+        <span class="project-featured-badge">✦ Featured</span>
+      </div>
+      <div class="project-body">
+        <h3>Tata Neu Super App</h3>
+        <p class="project-subtitle">Unified Tata Ecosystem Platform · TCS</p>
+        <p>Led Android engineering for a multi-brand super-app integrating 15+ Tata brands — NeuCoin, Air Asia, BigBasket, Croma, Tata 1mg — with modular MVVM architecture and microservices-backed APIs, scaling to 50M+ users.</p>
+        <div class="project-stats">
+          <span class="ps-stat ps-rating"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.1 · 50M+ installs</span>
+          <span class="ps-stat ps-updated"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated Jul 23, 2026</span>
+        </div>
+        <div class="tags"><i>Kotlin</i><i>MVVM</i><i>Clean Architecture</i><i>REST</i><i>TCS</i></div>
+        <div class="project-meta">
+          <span>TCS · Tata Digital · 50M+ installs</span>
+          <a href="https://play.google.com/store/apps/details?id=com.tatadigital.tcp" target="_blank">View on Play Store ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Appystore -->
+    <article class="project-card" data-category="kids">
+      <div class="project-thumb">
+        <img src="assets/appystore.jpeg" alt="Appystore kids learning app screenshot" loading="lazy">
+        <div class="project-thumb-overlay"></div>
+        <span class="project-cat-badge"><span class="project-badge-dot mobile"></span>Education</span>
+        <span class="project-featured-badge" style="color:#4ade80;background:rgba(74,222,128,.15);border-color:rgba(74,222,128,.35)">★ Best App for Kids</span>
+      </div>
+      <div class="project-body">
+        <h3>Appystore</h3>
+        <p class="project-subtitle">Google Play Best App for Kids 2017</p>
+        <p>Built a children's learning platform spanning rhymes, phonics, stories, science and math — 5,000+ curated videos across 18 learning areas. Recognised by Google Play as Best App for Kids with 200K+ downloads and a 4.5★ rating.</p>
+        <div class="project-stats">
+          <span class="ps-stat ps-rating"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.5 · 200K+ downloads</span>
+          <span class="ps-stat ps-updated"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Published 2017</span>
+        </div>
+        <div class="tags"><i>Android</i><i>Java</i><i>Media</i><i>Kids</i><i>Accessibility</i></div>
+        <div class="project-meta">
+          <span>Indus Net Technologies · 200K+ downloads</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- BLE -->
+    <article class="project-card" data-category="iot">
+      <div class="project-thumb">
+        <img src="assets/ble.jpeg" alt="BLE app screenshot" loading="lazy">
+        <div class="project-thumb-overlay"></div>
+        <div class="project-thumb-overlay"></div>
+        <span class="project-cat-badge"><span class="project-badge-dot banking"></span>IoT / Enterprise</span>
+      </div>
+      <div class="project-body">
+        <h3>BLE Proximity Detection</h3>
+        <p class="project-subtitle">Enterprise IoT Asset Tracking · Ericsson</p>
+        <p>Developed on-site at Ericsson HQ in Stockholm — a BLE-based Android system for locating lost Bluetooth-enabled enterprise devices using advertisement signal tracking and real-time proximity guidance.</p>
+        <div class="tags"><i>Android</i><i>BLE</i><i>IoT</i><i>Kotlin</i><i>Ericsson</i></div>
+        <div class="project-meta">
+          <span>TCS · Ericsson HQ Stockholm</span>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>
 
-<section id="experience" class="section experience-section">
-  <div class="section-head"><div class="badge">◷ <span>Career Journey</span></div><h2>Professional <em>Experience</em></h2><p>11.6+ years building mobile products, leading teams and solving high-scale engineering problems.</p></div>
-  <div class="timeline">
-    <article class="job"><div class="dot"></div><div class="job-date">09/2022 — Present</div><div class="job-card"><div class="job-title"><div><h3>Lead Android Developer</h3><strong>IBM India Pvt. Ltd.</strong></div><span>Kolkata, India</span></div><ul><li>Architected and delivered the Wimbledon 2026 mobile platform using Kotlin, Jetpack Compose and Clean Architecture.</li><li>Engineered secure Nationwide banking features using Certificate Pinning, Android Keystore, encrypted storage and OAuth 2.0 / JWT.</li><li>Introduced modular architecture and Gradle optimisations including KSP and configuration cache.</li><li>Accelerated development velocity by ~30% using GitHub Copilot, Claude Code, Cursor, Codex and Gemini.</li><li>Mentored 3–5 Android developers and drove architecture reviews and code quality practices.</li><li>Improved CI/CD with Jenkins and GitHub Actions and owned performance work across cold start, ANRs and memory leaks.</li></ul><div class="tags"><i>Kotlin</i><i>Jetpack Compose</i><i>Architecture</i><i>Security</i><i>AI-assisted Development</i></div></div></article>
-    <article class="job"><div class="dot"></div><div class="job-date">05/2018 — 09/2022</div><div class="job-card"><div class="job-title"><div><h3>Senior Android Developer (Group Lead)</h3><strong>Tata Consultancy Services Ltd.</strong></div><span>Kolkata · Stockholm</span></div><ul><li>Led Android engineering for Tata Neu, integrating 15+ Tata brands and serving 10M+ users.</li><li>Designed modular MVVM + Clean Architecture backed by microservices and REST APIs.</li><li>Managed 5–7 Android developers through Agile delivery, reviews and architecture discussions.</li><li>Worked on-site at Ericsson HQ, Stockholm on BLE-based proximity detection for IoT asset tracking.</li><li>Integrated NeuCoins rewards redemption and multi-service payment flows.</li></ul><div class="tags"><i>Kotlin</i><i>MVVM</i><i>Clean Architecture</i><i>BLE</i><i>Agile</i></div></div></article>
-    <article class="job"><div class="dot"></div><div class="job-date">10/2014 — 04/2018</div><div class="job-card"><div class="job-title"><div><h3>Android Developer</h3><strong>Indus Net Technologies Pvt. Ltd.</strong></div><span>Kolkata, India</span></div><ul><li>Built and shipped Appystore, recognised by Google Play as Best App for Kids in 2017.</li><li>Developed and deployed 10+ Android applications across Retail, Media and Enterprise domains.</li><li>Improved startup performance and reduced memory footprint through profiling and optimisation.</li><li>Collaborated with designers using Figma and Zeplin to deliver pixel-perfect, accessible interfaces.</li><li>Participated across Agile planning, estimation, UAT coordination and release management.</li></ul><div class="tags"><i>Android</i><i>Java</i><i>Media</i><i>Retail</i><i>Accessibility</i></div></div></article>
-  </div>
-</section>
-
-<section id="skills" class="section">
-  <div class="section-head"><div class="badge">⌘ <span>Tech Stack</span></div><h2>Tools I <em>Work With</em></h2><p>A modern Android engineering stack focused on architecture, performance, security and delivery.</p></div>
-  <div class="skills">
-    <div class="skill-group"><h3>Android Core</h3><div><span>Kotlin</span><span>Java</span><span>Android SDK</span><span>AndroidX</span><span>Jetpack Compose</span><span>XML</span><span>Material Design</span></div></div>
-    <div class="skill-group"><h3>Architecture</h3><div><span>MVVM</span><span>MVI</span><span>MVP</span><span>Clean Architecture</span><span>Modular Architecture</span><span>SOLID</span><span>TDD</span></div></div>
-    <div class="skill-group"><h3>Jetpack & Async</h3><div><span>ViewModel</span><span>LiveData</span><span>Flow</span><span>Coroutines</span><span>RoomDB</span><span>WorkManager</span><span>Paging 3</span><span>DataStore</span></div></div>
-    <div class="skill-group"><h3>Networking & Security</h3><div><span>Retrofit</span><span>OkHttp</span><span>REST APIs</span><span>GraphQL</span><span>OAuth 2.0</span><span>JWT</span><span>Certificate Pinning</span><span>Android Keystore</span></div></div>
-    <div class="skill-group"><h3>Testing & Quality</h3><div><span>JUnit</span><span>Mockito</span><span>Truth</span><span>Espresso</span><span>Robolectric</span><span>SonarQube</span><span>Lint</span><span>Spotless</span></div></div>
-    <div class="skill-group"><h3>CI/CD & AI</h3><div><span>Jenkins</span><span>GitHub Actions</span><span>GitLab CI</span><span>Bitrise</span><span>Gradle</span><span>GitHub Copilot</span><span>Claude Code</span><span>Cursor</span><span>Gemini</span><span>Codex</span></div></div>
-    <div class="skill-group"><h3>Cross Platform</h3><div><span>Kotlin Multiplatform</span><span>Compose Multiplatform</span><span>Flutter</span><span>Dart</span><span>BLE</span><span>RFID</span><span>NFC</span><span>Android Automotive</span></div></div>
-    <div class="skill-group"><h3>Analytics & Tools</h3><div><span>Firebase</span><span>Crashlytics</span><span>Adobe Analytics</span><span>JIRA</span><span>Confluence</span><span>Figma</span><span>Zeplin</span><span>Git</span></div></div>
-  </div>
-</section>
-
-<section class="section recognition">
-  <div class="section-head"><div class="badge">★ <span>Recognition</span></div><h2>Achievements & <em>Certifications</em></h2></div>
-  <div class="recognition-grid">
-    <div class="recognition-card"><strong>Client Appreciation Star of the Sprint</strong><span>IBM India Pvt. Ltd.</span><p>For exceeding delivery milestones on critical banking and sports platform features.</p></div>
-    <div class="recognition-card"><strong>Certificate of Appreciation</strong><span>Tata Consultancy Services</span><p>For outstanding technical delivery and engineering leadership across high-impact launches.</p></div>
-    <div class="recognition-card"><strong>WalkOverWalls (WOW!) Award</strong><span>Indus Net Technologies</span><p>For consistent delivery excellence, problem-solving and technical innovation.</p></div>
-    <div class="recognition-card"><strong>Best App for Kids — Google Play 2017</strong><span>Appystore</span><p>Recognised by Google Play; the app surpassed 200K+ downloads with a 4.5 rating.</p></div>
-  </div>
-  <div class="certs"><span>IBM Generative AI Developer · 2025</span><span>Android Enterprise Certified Associate · 2024</span><span>IBM Enterprise Design Thinking Practitioner · 2024</span><span>Samsung Knox Associate · 2023</span><span>Samsung Galaxy Business Associate · 2023</span></div>
-</section>
-
-
-<section id="blog" class="section blog-section">
+<!-- ══════════════════════════════════════════
+     8. EDUCATION
+     ══════════════════════════════════════════ -->
+<section id="education" class="section education-section">
   <div class="section-head">
-    <div class="badge">✎ <span>Engineering Notes</span></div>
-    <h2>What I <em>Think About</em></h2>
-    <p>Practical topics drawn from the engineering work, architecture and delivery experience in my career.</p>
+    <div class="badge edu-badge"><span class="exp-badge-dot"></span><span>Academic Background</span></div>
+    <h2><em>Education</em></h2>
+    <p>Strong foundation in Computer Science &amp; Engineering, backed by a decade of professional software engineering practice.</p>
   </div>
-  <div class="blog-grid">
-    <article class="blog-card"><span>ANDROID · ARCHITECTURE</span><h3>Modern Android Architecture at Scale</h3><p>How Kotlin, Jetpack Compose, MVVM/MVI, Clean Architecture and modularisation can keep large mobile codebases maintainable.</p><a href="#skills" data-nav>Explore stack →</a></article>
-    <article class="blog-card"><span>PERFORMANCE · QUALITY</span><h3>Making Android Apps Faster & More Reliable</h3><p>Lessons from cold-start optimisation, ANR reduction, memory profiling, Crashlytics, lint and production monitoring.</p><a href="#experience" data-nav>View experience →</a></article>
-    <article class="blog-card"><span>SECURITY · BANKING</span><h3>Security Patterns for Financial Apps</h3><p>Practical mobile security using certificate pinning, Android Keystore, encrypted storage and OAuth 2.0 / JWT.</p><a href="#projects" data-nav>See Nationwide →</a></article>
-    <article class="blog-card"><span>AI · PRODUCTIVITY</span><h3>AI-Assisted Android Development</h3><p>Using GitHub Copilot, Claude Code, Cursor, Codex and Gemini as engineering accelerators while keeping architecture and code quality under human control.</p><a href="#experience" data-nav>See impact →</a></article>
+
+  <div class="edu-grid">
+
+    <!-- Card 1 — B.Tech -->
+    <article class="edu-card">
+      <div class="edu-card-top">
+        <div class="edu-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <span class="edu-grade-pill">B.Tech · CS&amp;E</span>
+      </div>
+      <h3 class="edu-degree">Bachelor of Technology</h3>
+      <p class="edu-field">Computer Science &amp; Engineering</p>
+      <p class="edu-school">West Bengal University of Technology (WBUT)</p>
+      <div class="edu-meta-row">
+        <span class="edu-meta-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          2010 – 2014
+        </span>
+        <span class="edu-meta-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Kolkata, West Bengal
+        </span>
+      </div>
+      <div class="edu-divider"></div>
+      <div class="edu-section-label">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Key Coursework
+      </div>
+      <div class="edu-tags">
+        <span>Data Structures &amp; Algorithms</span>
+        <span>Object-Oriented Programming</span>
+        <span>Operating Systems</span>
+        <span>Database Management</span>
+        <span>Computer Networks</span>
+        <span>Software Engineering</span>
+      </div>
+      <div class="edu-divider"></div>
+      <div class="edu-section-label">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        Honors &amp; Distinction
+      </div>
+      <ul class="edu-honors">
+        <li>Solid CS fundamentals — algorithms, systems and networking applied to 11.6+ years of professional engineering</li>
+        <li>Active participant in coding competitions and campus technical events</li>
+        <li>Led engineering projects applying SDLC and Agile methodology from university level</li>
+      </ul>
+    </article>
+
+    <!-- Card 2 — 10th / 12th (merged) -->
+    <article class="edu-card">
+      <div class="edu-card-top">
+        <div class="edu-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <span class="edu-grade-pill edu-grade-hs">10th &amp; 12th</span>
+      </div>
+      <h3 class="edu-degree">Secondary &amp; Higher Secondary</h3>
+      <p class="edu-field">Science Stream — Mathematics &amp; Computer Science</p>
+
+      <!-- 12th row -->
+      <div class="edu-sub-block">
+        <p class="edu-sub-label">12th — Higher Secondary</p>
+        <p class="edu-school" style="margin-bottom:8px">West Bengal Council of Higher Secondary Education (WBCHSE)</p>
+        <div class="edu-meta-row">
+          <span class="edu-meta-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            2008 – 2010
+          </span>
+          <span class="edu-meta-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Kolkata, West Bengal
+          </span>
+        </div>
+      </div>
+
+      <div class="edu-sub-divider"></div>
+
+      <!-- 10th row -->
+      <div class="edu-sub-block">
+        <p class="edu-sub-label">10th — Secondary</p>
+        <p class="edu-school" style="margin-bottom:8px">West Bengal Board of Secondary Education (WBBSE)</p>
+        <div class="edu-meta-row">
+          <span class="edu-meta-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Passed 2008
+          </span>
+          <span class="edu-meta-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Kolkata, West Bengal
+          </span>
+        </div>
+      </div>
+
+      <div class="edu-divider"></div>
+      <div class="edu-section-label">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Key Coursework
+      </div>
+      <div class="edu-tags">
+        <span>Mathematics</span>
+        <span>Physics</span>
+        <span>Chemistry</span>
+        <span>Computer Science</span>
+        <span>General Science</span>
+      </div>
+      <div class="edu-divider"></div>
+      <div class="edu-section-label">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        Honors &amp; Distinction
+      </div>
+      <ul class="edu-honors">
+        <li>Strong academic performance in Mathematics and Computer Science — the bedrock of a software engineering career</li>
+        <li>Built a strong foundation for higher studies in engineering and applied computer science</li>
+        <li>Early interest in computers set the direction for a career in software engineering</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+ 
+<!-- ══════════════════════════════════════════
+     7. CERTIFICATIONS
+     ══════════════════════════════════════════ -->
+<section id="certifications" class="section certifications-section">
+  <div class="section-head cert-section-head">
+    <div class="badge">● <span>Certifications</span></div>
+    <h2>Certifications &amp; <em>Licences</em></h2>
+    <p>Credentials highlighted in the <strong>CERTIFICATIONS &amp; LICENCES</strong> section of my resume.</p>
+  </div>
+
+  <div class="cert-grid cert-grid-five">
+    <article class="cert-card cert-card-featured">
+      <div class="cert-card-top">
+        <div class="cert-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l-3.5 2 1-4L6 10h4.2L12 6l1.8 4H18l-3.5 3 1 4z"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <span class="cert-pill">AI</span>
+      </div>
+      <h3>IBM Generative AI Developer</h3>
+      <p class="cert-issuer">IBM · 2025</p>
+      <div class="cert-meta-row">
+        <span class="cert-meta-item">Generative AI</span>
+        <span class="cert-meta-item">IBM</span>
+      </div>
+    </article>
+
+    <article class="cert-card">
+      <div class="cert-card-top">
+        <div class="cert-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l-3.5 2 1-4L6 10h4.2L12 6l1.8 4H18l-3.5 3 1 4z"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <span class="cert-pill">Android</span>
+      </div>
+      <h3>Android Enterprise Certified Associate</h3>
+      <p class="cert-issuer">Android Enterprise Academy · 2024</p>
+      <div class="cert-meta-row">
+        <span class="cert-meta-item">Enterprise Mobility</span>
+        <span class="cert-meta-item">Android</span>
+      </div>
+    </article>
+
+    <article class="cert-card">
+      <div class="cert-card-top">
+        <div class="cert-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7l9 5 9-5-9-5z"/><path d="M3 17l9 5 9-5"/><path d="M3 12l9 5 9-5"/></svg>
+        </div>
+        <span class="cert-pill">Design</span>
+      </div>
+      <h3>IBM Enterprise Design Thinking Practitioner</h3>
+      <p class="cert-issuer">IBM · 2024</p>
+      <div class="cert-meta-row">
+        <span class="cert-meta-item">Design Thinking</span>
+        <span class="cert-meta-item">IBM</span>
+      </div>
+    </article>
+
+    <article class="cert-card">
+      <div class="cert-card-top">
+        <div class="cert-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <span class="cert-pill">Security</span>
+      </div>
+      <h3>Samsung Knox Associate</h3>
+      <p class="cert-issuer">Samsung Electronics, Mobile Experience Business · 2023</p>
+      <div class="cert-meta-row">
+        <span class="cert-meta-item">Knox</span>
+        <span class="cert-meta-item">Enterprise Security</span>
+      </div>
+    </article>
+
+    <article class="cert-card">
+      <div class="cert-card-top">
+        <div class="cert-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18"/><path d="M6 3h12l1 4H5l1-4z"/><path d="M5 7v11a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7"/></svg>
+        </div>
+        <span class="cert-pill">Business</span>
+      </div>
+      <h3>Samsung Galaxy Business Associate</h3>
+      <p class="cert-issuer">Samsung Electronics, Mobile Experience Business · 2023</p>
+      <div class="cert-meta-row">
+        <span class="cert-meta-item">Galaxy Ecosystem</span>
+        <span class="cert-meta-item">B2B Mobility</span>
+      </div>
+    </article>
+  </div>
+
+  <p class="cert-linkedin-note">Additional certifications visible on <a href="https://www.linkedin.com/in/dipanjan-chakraborty-b4b15a7a" target="_blank" rel="noreferrer">LinkedIn</a>.</p>
+</section>
+ 
+<!-- ══════════════════════════════════════════
+     8. CONTACT
+     ══════════════════════════════════════════ -->
+<section id="contact" class="contact section">
+  <div class="glow blue"></div>
+  <div class="glow purple" style="top:auto;bottom:-60px;left:auto;right:-80px;opacity:.1"></div>
+
+  <!-- Section header -->
+  <div class="contact-header">
+    <div class="badge"><span class="exp-badge-dot"></span><span>Get In Touch</span></div>
+    <h2>Let's Build Something <em>Intelligent</em></h2>
+    <p>Have an interesting Android project, a high-scale product idea, or an engineering leadership role? I'm always open to challenging problems and turning ideas into real products.</p>
+  </div>
+
+  <!-- Two-column body -->
+  <div class="contact-body">
+
+    <!-- Left — info panel -->
+    <div class="contact-info-panel">
+      <div class="cip-head">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12 19.79 19.79 0 0 1 1.15 3.36 2 2 0 0 1 3.12 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        <h3>Contact Information</h3>
+      </div>
+      <p class="cip-sub">Feel free to reach out via form, direct email, or connect across social channels.</p>
+
+      <div class="cip-items">
+        <a class="cip-item" href="mailto:chakraborty.dipanjan07@gmail.com">
+          <div class="cip-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <span class="cip-label">Email Direct</span>
+            <strong>chakraborty.dipanjan07@gmail.com</strong>
+          </div>
+        </a>
+        <a class="cip-item" href="tel:+918902457437">
+          <div class="cip-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12 19.79 19.79 0 0 1 1.15 3.36 2 2 0 0 1 3.12 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          </div>
+          <div>
+            <span class="cip-label">Phone / WhatsApp</span>
+            <strong>+91 89024 57437</strong>
+          </div>
+        </a>
+        <div class="cip-item">
+          <div class="cip-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span class="cip-label">Location</span>
+            <strong>Kolkata, West Bengal, India</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="cip-social-label">Follow &amp; Connect</div>
+      <div class="cip-socials">
+        <a href="https://github.com/dipanjanchakraborty" target="_blank" aria-label="GitHub" class="cip-social-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/dipanjanchakraborty" target="_blank" aria-label="LinkedIn" class="cip-social-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://play.google.com/store/apps/developer?id=Dipanjan+Chakraborty" target="_blank" aria-label="Play Store" class="cip-social-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2l13.7-7.93-2.97-2.98-11.72 10.71zm-1.5-20.77C1.26 3.4 1 3.93 1 4.56v14.88c0 .63.26 1.16.68 1.57l.08.07L9.9 12l-8.07-8.93-.15-.08zm19.1 7.76L17.65 8.4 14.5 11.55l3.15 3.15 3.15-1.82c.9-.52.9-1.37-.02-1.93zM4.17.4L17.87 8.33l-2.97 2.97L3.18.6c.28-.2.63-.29.99-.2z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right — form panel -->
+    <div class="contact-form-panel">
+      <form id="contactForm" novalidate>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label class="cf-label" for="cf-name">YOUR NAME <span>*</span></label>
+            <input class="cf-input" id="cf-name" type="text" placeholder="Dipanjan Chakraborty" required autocomplete="name">
+          </div>
+          <div class="cf-field">
+            <label class="cf-label" for="cf-email">YOUR EMAIL <span>*</span></label>
+            <input class="cf-input" id="cf-email" type="email" placeholder="you@company.com" required autocomplete="email">
+          </div>
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-subject">SUBJECT <span>*</span></label>
+          <input class="cf-input" id="cf-subject" type="text" placeholder="Senior Android Engineer Opportunity / Project Inquiry" required>
+        </div>
+        <div class="cf-field">
+          <label class="cf-label" for="cf-message">MESSAGE DETAILS <span>*</span></label>
+          <textarea class="cf-input cf-textarea" id="cf-message" placeholder="Tell me about the role, project goals, tech stack, timeline..." required></textarea>
+        </div>
+        <button type="submit" class="cf-submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message
+        </button>
+        <p class="cf-note" id="cf-feedback"></p>
+      </form>
+    </div>
+
   </div>
 </section>
 
-<section id="contact" class="contact section">
-  <div class="glow blue"></div><div class="contact-inner">
-    <div class="badge">✦ <span>Get In Touch</span></div>
-    <h2>Let's build something <em>great.</em></h2>
-    <p>I'm open to Senior Android, Mobile Architect and engineering leadership opportunities where I can build high-scale products and help teams ship better software.</p>
-    <div class="contact-actions"><a class="primary" href="mailto:chakraborty.dipanjan07@gmail.com">Send an Email ↗</a><button class="secondary" id="copyEmail2">Copy Email</button></div>
-    <div class="contact-details"><span>📍 Kolkata, India</span><span>✉ chakraborty.dipanjan07@gmail.com</span><span>☎ +91 89024 57437</span></div>
-  </div>
-</section>
 </main>
 
-<footer><span>© 2026 Dipanjan Chakraborty</span><span>Android · Kotlin · Compose · Architecture</span></footer>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-top">
+      <div class="site-footer-brand">
+        <div class="site-footer-avatar">DC</div>
+        <div class="site-footer-brand-copy">
+          <h3>Dipanjan Chakraborty</h3>
+          <p class="site-footer-role">Senior Android Engineer</p>
+          <p class="site-footer-tagline">Building scalable Android applications with Kotlin, Jetpack Compose and modern architecture.</p>
+          <div class="site-footer-socials">
+            <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub" class="site-footer-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/dipanjanchakraborty-b4b15a7a/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="site-footer-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:chakraborty.dipanjan07@gmail.com" aria-label="Email" class="site-footer-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer-links">
+        <h4>Quick Links</h4>
+        <a href="#about" data-nav>About Me</a>
+        <a href="#skills" data-nav>Skills &amp; Capabilities</a>
+        <a href="#projects" data-nav>Featured Projects</a>
+        <a href="#certifications" data-nav>Certifications</a>
+        <a href="#contact" data-nav>Get in Touch</a>
+      </div>
+
+      <div class="site-footer-status">
+        <h4>Status &amp; Location</h4>
+        <span class="site-footer-badge">Available for new opportunities</span>
+        <p>Located in Kolkata, India. Open to relocation & remote collaboration, consulting and product-focused engineering roles.</p>
+      </div>
+    </div>
+
+    <div class="site-footer-bottom">
+      <p>© 2026 Dipanjan Chakraborty. Designed with care.</p>
+      <a href="#hero" data-nav class="site-footer-toplink">
+        Back to top
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
 
 <div id="palette" class="palette" aria-hidden="true">
   <div class="palette-box">
     <input id="paletteInput" placeholder="Search or jump to..." autocomplete="off">
-    <button data-target="#hero">About</button><button data-target="#projects">Projects</button><button data-target="#experience">Experience</button><button data-target="#skills">Skills</button><button data-target="#contact">Contact</button>
+    <button data-target="#hero">About</button><button data-target="#projects">Projects</button><button data-target="#experience">Experience</button><button data-target="#skills">Skills</button><button data-target="#education">Education</button><button data-target="#contact">Contact</button>
   </div>
 </div>
 <div id="toast"></div>
